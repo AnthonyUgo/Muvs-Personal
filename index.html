@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MUVS - Creative Agency</title>
+    <style>
+      /* Basic CSS for styling */
+      body {
+        margin: 0;
+        font-family: 'Arial', sans-serif;
+        background-color: black;
+        color: white;
+        overflow-x: hidden;
+      }
+      .grain {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('https://www.transparenttextures.com/patterns/sandstone.png');
+        pointer-events: none;
+        opacity: 0.1;
+      }
+      .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        text-align: center;
+        z-index: 2;
+        position: relative;
+      }
+      h1 {
+        font-size: 4em;
+        font-weight: bold;
+        color: white;
+      }
+      .button {
+        background-color: #ff4e00;
+        border: none;
+        padding: 12px 20px;
+        font-size: 1.2em;
+        cursor: pointer;
+        color: white;
+        transition: background-color 0.3s ease;
+        border-radius: 5px;
+        margin-top: 20px;
+      }
+      .button:hover {
+        background-color: #ff8a00;
+      }
+      audio {
+        margin-top: 20px;
+        width: 80%;
+        max-width: 400px;
+      }
+      img {
+        margin-top: 20px;
+        width: 300px;
+        height: auto;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Grainy background effect -->
+    <div class="grain"></div>
+
+    <!-- Main content area -->
+    <div class="content">
+      <!-- Title for the page -->
+      <h1>MUVS</h1>
+      <p>A creative space for ideas and expression</p>
+
+      <!-- Instagram link button -->
+      <a href="https://www.instagram.com/mamlikemuvs" target="_blank">
+        <button class="button">Follow on Instagram</button>
+      </a>
+
+      <!-- Audio player for your unreleased song -->
+      <audio controls>
+        <source src="your-unreleased-song.mp3" type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio>
+
+      <!-- Image placeholder for your content -->
+      <img src="muvs1.jpg" alt="MUVS Image" />
+
+    </div>
+  </body>
+</html>
