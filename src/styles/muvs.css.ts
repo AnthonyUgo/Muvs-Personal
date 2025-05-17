@@ -17,7 +17,7 @@ export const background = style({
   left: 0,
   width: '100%',
   height: '100%',
-  backgroundImage: "url('muvs1.png')",
+  backgroundImage: "url('/muvs1.png')", // ✅ updated path
   backgroundSize: 'cover',
   backgroundPosition: 'center',
   zIndex: 1,

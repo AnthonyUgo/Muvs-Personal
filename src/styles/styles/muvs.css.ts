@@ -1,14 +1,14 @@
-// src/styles/muvs.css.ts
-import { style } from '@vanilla-extract/css';
+import { style, globalStyle } from '@vanilla-extract/css';
 
 export const root = style({
   height: '100%',
   margin: 0,
   padding: 0,
   fontFamily: 'Arial, sans-serif',
-  position: 'relative',
-  overflow: 'hidden',
+  backgroundColor: '#000',
   color: 'white',
+  overflow: 'hidden',
+  position: 'relative',
 });
 
 export const background = style({
@@ -41,33 +41,46 @@ export const content = style({
   flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'center',
-  height: '100%',
+  height: '100vh',
+  padding: '2rem',
   textAlign: 'center',
 });
 
 export const nameImg = style({
-  maxWidth: '80%',
+  maxWidth: '85%',
   height: 'auto',
   marginBottom: '2rem',
 });
 
-export const links = style({
+export const linkContainer = style({
   display: 'flex',
-  gap: '2rem',
-  fontSize: '1rem',
+  gap: '1rem',
+  flexWrap: 'wrap',
+  justifyContent: 'center',
+  marginTop: '1rem',
+});
 
-  selectors: {
-    '& a': {
-      color: 'rgba(255, 255, 255, 0.85)',
-      textDecoration: 'none',
-      padding: '0.5rem 1rem',
-      borderRadius: '999px',
-      backgroundColor: 'rgba(255, 255, 255, 0.1)',
-      transition: 'all 0.3s ease',
-    },
-    '& a:hover': {
-      backgroundColor: 'rgba(255, 255, 255, 0.2)',
-      transform: 'scale(1.05)',
-    },
+globalStyle(`${linkContainer} a`, {
+  color: '#fff',
+  textDecoration: 'none',
+  padding: '0.6rem 1.2rem',
+  borderRadius: '30px',
+  backgroundColor: 'rgba(255, 255, 255, 0.08)',
+  border: '1px solid rgba(255, 255, 255, 0.2)',
+  fontSize: '0.95rem',
+  transition: 'all 0.3s ease',
+  backdropFilter: 'blur(6px)',
+});
+
+globalStyle(`${linkContainer} a:hover`, {
+  backgroundColor: 'rgba(255, 255, 255, 0.2)',
+  transform: 'scale(1.05)',
+});
+
+globalStyle('@media (max-width: 600px)', {
+  [`${linkContainer}`]: {
+    flexDirection: 'column',
+    alignItems: 'center',
+    gap: '0.75rem',
   },
 });
