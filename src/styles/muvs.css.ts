@@ -1,5 +1,5 @@
 // src/styles/muvs.css.ts
-import { style } from '@vanilla-extract/css';
+import { style, globalStyle } from '@vanilla-extract/css';
 
 export const root = style({
   height: '100%',
@@ -51,23 +51,23 @@ export const nameImg = style({
   marginBottom: '2rem',
 });
 
-export const links = style({
+export const linkContainer = style({
   display: 'flex',
   gap: '2rem',
   fontSize: '1rem',
+});
 
-  selectors: {
-    '& a': {
-      color: 'rgba(255, 255, 255, 0.85)',
-      textDecoration: 'none',
-      padding: '0.5rem 1rem',
-      borderRadius: '999px',
-      backgroundColor: 'rgba(255, 255, 255, 0.1)',
-      transition: 'all 0.3s ease',
-    },
-    '& a:hover': {
-      backgroundColor: 'rgba(255, 255, 255, 0.2)',
-      transform: 'scale(1.05)',
-    },
-  },
+// Apply global styles to <a> tags inside the container
+globalStyle(`${linkContainer} a`, {
+  color: 'rgba(255, 255, 255, 0.85)',
+  textDecoration: 'none',
+  padding: '0.5rem 1rem',
+  borderRadius: '999px',
+  backgroundColor: 'rgba(255, 255, 255, 0.1)',
+  transition: 'all 0.3s ease',
+});
+
+globalStyle(`${linkContainer} a:hover`, {
+  backgroundColor: 'rgba(255, 255, 255, 0.2)',
+  transform: 'scale(1.05)',
 });
