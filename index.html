@@ -1,92 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MUVS</title>
-  <style>
-    body, html {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      font-family: Arial, sans-serif;
-      position: relative;
-      overflow: hidden;
-      color: white;
-    }
-
-    .background {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: url('muvs1.png');
-      background-size: cover;
-      background-position: center;
-      z-index: 1;
-    }
-
-    .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.4);
-      backdrop-filter: blur(4px);
-      z-index: 2;
-    }
-
-    .content {
-      position: relative;
-      z-index: 3;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100%;
-      text-align: center;
-    }
-
-    .name-img {
-      max-width: 80%;
-      height: auto;
-      margin-bottom: 2rem;
-    }
-
-    .links {
-      display: flex;
-      gap: 2rem;
-      font-size: 1rem;
-    }
-
-    .links a {
-      color: rgba(255, 255, 255, 0.85);
-      text-decoration: none;
-      padding: 0.5rem 1rem;
-      border-radius: 999px;
-      background-color: rgba(255, 255, 255, 0.1);
-      transition: background-color 0.3s ease, transform 0.3s ease;
-    }
-
-    .links a:hover {
-      background-color: rgba(255, 255, 255, 0.2);
-      transform: scale(1.05);
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Vanilla Extract styles will be imported in your project setup -->
 </head>
-<body>
-  <div class="background"></div>
-  <div class="overlay"></div>
-
-  <div class="content">
-    <img src="image6.png" alt="MUVS" class="name-img" />
-    <div class="links">
-      <a href="https://www.instagram.com/manlikemuvs" target="_blank">Instagram</a>
-      <a href="https://open.spotify.com/artist/0kp4u1JezANHopBAg5o2P7" target="_blank">Spotify</a>
-      <a href="https://music.apple.com/us/artist/muvs/1538764598" target="_blank">Apple Music</a>
+<body class="body">
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1 class="logo">MUVS</h1>
+      <p class="tagline">Vibes. Vision. Volume.</p>
+      <a href="#music" class="cta">Listen Now</a>
     </div>
-  </div>
+  </section>
+
+  <!-- Music Links -->
+  <section id="music" class="music-links">
+    <h2>Listen to MUVS</h2>
+    <div class="music-buttons">
+      <a href="https://open.spotify.com/artist/0kp4u1JezANHopBAg5o2P7" target="_blank" class="btn">Spotify</a>
+      <a href="https://music.apple.com/us/artist/muvs/1538764598" target="_blank" class="btn">Apple Music</a>
+      <a href="https://www.youtube.com/@Muvs" target="_blank" class="btn">YouTube</a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about">
+    <h2>About MUVS</h2>
+    <p>Emerging from the heart of rhythm and soul, MUVS blends Afrobeats with a global sound. Every track is a journey. Every vibe is intentional.</p>
+  </section>
+
+  <!-- Social Media Links -->
+  <section class="socials">
+    <h3>Connect with MUVS</h3>
+    <div class="social-icons">
+      <a href="https://www.instagram.com/manlikemuvs/" target="_blank" class="icon">Instagram</a>
+      <a href="https://x.com/ManLikeMuvs?s=21" target="_blank" class="icon">Twitter (X)</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 MUVS. All rights reserved.</p>
+  </footer>
 </body>
 </html>
