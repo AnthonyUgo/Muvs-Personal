@@ -1,8 +1,7 @@
-// src/styles/muvs.css.ts
 import { style, globalStyle } from '@vanilla-extract/css';
 
 export const root = style({
-  height: '100%',
+  height: '100vh',
   margin: 0,
   padding: 0,
   fontFamily: 'Arial, sans-serif',
@@ -12,25 +11,25 @@ export const root = style({
 });
 
 export const background = style({
-  position: 'absolute',
+  position: 'fixed',
   top: 0,
   left: 0,
-  width: '100%',
-  height: '100%',
-  backgroundImage: "url('/muvs1.png')", // ✅ updated path
+  width: '100vw',
+  height: '100vh',
+  backgroundImage: "url('/muvs1.png')",
   backgroundSize: 'cover',
   backgroundPosition: 'center',
   zIndex: 1,
 });
 
 export const overlay = style({
-  position: 'absolute',
+  position: 'fixed',
   top: 0,
   left: 0,
-  width: '100%',
-  height: '100%',
-  background: 'rgba(0, 0, 0, 0.4)',
-  backdropFilter: 'blur(4px)',
+  width: '100vw',
+  height: '100vh',
+  background: 'rgba(0, 0, 0, 0.45)',
+  backdropFilter: 'blur(3px)',
   zIndex: 2,
 });
 
@@ -38,36 +37,49 @@ export const content = style({
   position: 'relative',
   zIndex: 3,
   display: 'flex',
-  flexDirection: 'column',
+  flexDirection: 'row',
   alignItems: 'center',
   justifyContent: 'center',
-  height: '100%',
-  textAlign: 'center',
+  height: '100vh',
+  padding: '0 5vw',
+  gap: '5vw',
 });
 
 export const nameImg = style({
-  maxWidth: '80%',
+  maxWidth: '200px',
   height: 'auto',
-  marginBottom: '2rem',
 });
 
 export const linkContainer = style({
   display: 'flex',
-  gap: '2rem',
-  fontSize: '1rem',
+  flexDirection: 'column',
+  gap: '1.25rem',
+  alignItems: 'flex-start',
 });
 
-// Apply global styles to <a> tags inside the container
 globalStyle(`${linkContainer} a`, {
-  color: 'rgba(255, 255, 255, 0.85)',
+  color: '#fff',
   textDecoration: 'none',
-  padding: '0.5rem 1rem',
-  borderRadius: '999px',
-  backgroundColor: 'rgba(255, 255, 255, 0.1)',
-  transition: 'all 0.3s ease',
+  padding: '0.75rem 1.5rem',
+  borderRadius: '40px',
+  background: 'linear-gradient(135deg, #ff6ec4, #7873f5)',
+  boxShadow: '0 4px 20px rgba(255, 110, 196, 0.4)',
+  fontWeight: 'bold',
+  fontSize: '1rem',
+  transition: 'transform 0.3s ease, box-shadow 0.3s ease',
 });
 
 globalStyle(`${linkContainer} a:hover`, {
-  backgroundColor: 'rgba(255, 255, 255, 0.2)',
   transform: 'scale(1.05)',
+  boxShadow: '0 6px 30px rgba(255, 110, 196, 0.6)',
+});
+
+globalStyle('@media (max-width: 768px)', {
+  [`${content}`]: {
+    flexDirection: 'column',
+    textAlign: 'center',
+  },
+  [`${linkContainer}`]: {
+    alignItems: 'center',
+  },
 });
