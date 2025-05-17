@@ -58,20 +58,21 @@ export const linkContainer = style({
 });
 
 globalStyle(`${linkContainer} a`, {
-  color: '#fff',
+  color: '#1c1c1c',
   textDecoration: 'none',
   padding: '0.75rem 1.5rem',
   borderRadius: '40px',
-  background: 'linear-gradient(135deg, #ff6ec4, #7873f5)',
-  boxShadow: '0 4px 20px rgba(255, 110, 196, 0.4)',
+  background: 'linear-gradient(135deg, #c2b280, #8f8163)',
+  boxShadow: '0 4px 16px rgba(194, 178, 128, 0.25)',
   fontWeight: 'bold',
   fontSize: '1rem',
-  transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+  transition: 'all 0.3s ease-in-out',
+  backdropFilter: 'blur(2px)',
 });
 
 globalStyle(`${linkContainer} a:hover`, {
   transform: 'scale(1.05)',
-  boxShadow: '0 6px 30px rgba(255, 110, 196, 0.6)',
+  boxShadow: '0 0 18px rgba(194, 178, 128, 0.5)',
 });
 
 globalStyle('@media (max-width: 768px)', {
