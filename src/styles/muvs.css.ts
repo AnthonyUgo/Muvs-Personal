@@ -55,8 +55,10 @@ export const linkContainer = style({
   flexDirection: 'column',
   gap: '1.25rem',
   alignItems: 'flex-start',
+  marginBottom: '20px',
 });
 
+// Global styles for link buttons
 globalStyle(`${linkContainer} a`, {
   color: '#1c1c1c',
   textDecoration: 'none',
@@ -75,12 +77,81 @@ globalStyle(`${linkContainer} a:hover`, {
   boxShadow: '0 0 18px rgba(194, 178, 128, 0.5)',
 });
 
+// Responsive adjustments
 globalStyle('@media (max-width: 768px)', {
   [`${content}`]: {
     flexDirection: 'column',
     textAlign: 'center',
+    alignItems: 'center',
+    gap: '2rem',
   },
   [`${linkContainer}`]: {
     alignItems: 'center',
+  },
+});
+
+// Mailchimp form container
+export const mailchimpForm = style({
+  background: 'rgba(0, 0, 0, 0.65)',
+  padding: '20px',
+  borderRadius: '12px',
+  maxWidth: '400px',
+  width: '100%',
+  color: '#fff',
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '12px',
+  fontSize: '1rem',
+  fontWeight: 'bold',
+  boxShadow: '0 4px 16px rgba(0, 0, 0, 0.25)',
+  backdropFilter: 'blur(4px)',
+  textAlign: 'left',
+});
+
+// Mailchimp form nested elements
+globalStyle(`${mailchimpForm} h2`, {
+  margin: 0,
+  textAlign: 'center',
+  fontSize: '1.5rem',
+  color: '#c2b280',
+});
+
+globalStyle(`${mailchimpForm} label`, {
+  fontSize: '1rem',
+  marginBottom: '4px',
+});
+
+globalStyle(`${mailchimpForm} input[type="email"]`, {
+  padding: '10px',
+  borderRadius: '8px',
+  border: '1px solid #c2b280',
+  fontSize: '1rem',
+  backgroundColor: 'rgba(255, 255, 255, 0.85)',
+  color: '#1c1c1c',
+  width: '100%',
+});
+
+globalStyle(`${mailchimpForm} button`, {
+  background: 'linear-gradient(135deg, #c2b280, #8f8163)',
+  color: '#1e1e1e',
+  padding: '10px',
+  borderRadius: '8px',
+  border: 'none',
+  cursor: 'pointer',
+  fontWeight: 'bold',
+  transition: 'background 0.3s ease-in-out',
+  width: '100%',
+});
+
+globalStyle(`${mailchimpForm} button:hover`, {
+  background: 'linear-gradient(135deg, #bfa066, #7e6f50)',
+});
+
+// Responsive adjustments for Mailchimp form
+globalStyle('@media (max-width: 768px)', {
+  [`${mailchimpForm}`]: {
+    width: '90%',
+    marginLeft: 'auto',
+    marginRight: 'auto',
   },
 });
